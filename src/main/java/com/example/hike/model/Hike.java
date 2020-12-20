@@ -1,15 +1,12 @@
 package com.example.hike.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
-import java.util.UUID;
 
 @NoArgsConstructor
-@AllArgsConstructor
 @EnableAutoConfiguration
 @Entity
 @Data
@@ -30,8 +27,9 @@ public class Hike {
     private String instructorId;
 
 
-    public Hike(String name, String date, int duration, int complexity, int min_age, int max_people,
+    public Hike(String id, String name, String date, int duration, int complexity, int min_age, int max_people,
                 double price, String instructorId){
+        this.hikeId = id;
         this.name = name;
         this.date = date;
         this.duration = duration;

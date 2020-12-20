@@ -11,7 +11,7 @@ public interface HikeService {
 
     List<Hike> getAll();
 
-    Hike getById(String id) throws NotFoundException;
+    Hike getById(String id);
 
     void deleteById(String id);
 

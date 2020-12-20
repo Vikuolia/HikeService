@@ -29,10 +29,8 @@ public class HikeServiceImpl implements HikeService {
     }
 
     @Override
-    public Hike getById(String id) throws NotFoundException {
-        Optional<Hike> optionalHike = hikeRepository.findById(id);
-        if(optionalHike.isPresent()) return hikeRepository.findById(id).get();
-        else throw new NotFoundException(String.format("Hike with id: %s does not exist", id));
+    public Hike getById(String id){
+        return hikeRepository.getOne(id);
     }
 
     @Override
