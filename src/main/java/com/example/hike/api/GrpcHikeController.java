@@ -18,7 +18,6 @@ public class GrpcHikeController extends HikeServiceGrpc.HikeServiceImplBase {
 
     @Override
     public void add(HikeRequest request, StreamObserver<HikeResponse> responseObserver) {
-        String id = request.getHikeId();
         String name = request.getName();
         String date = request.getDate();
         int duration = request.getDuration();
@@ -28,7 +27,7 @@ public class GrpcHikeController extends HikeServiceGrpc.HikeServiceImplBase {
         double price = request.getPrice();
         String instructor = request.getInstructorId();
 
-        Hike hikeAdd = new Hike(id, name, date, duration, complexity, minAge, maxPeople, price, instructor);
+        Hike hikeAdd = new Hike(name, date, duration, complexity, minAge, maxPeople, price, instructor);
         Hike hikeResponse = hikeService.addHike(hikeAdd);
 
         HikeResponse response = HikeResponse.newBuilder()

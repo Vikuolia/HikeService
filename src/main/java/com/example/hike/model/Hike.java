@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
+import java.util.UUID;
 
 @NoArgsConstructor
 @EnableAutoConfiguration
@@ -27,9 +28,9 @@ public class Hike {
     private String instructorId;
 
 
-    public Hike(String id, String name, String date, int duration, int complexity, int min_age, int max_people,
+    public Hike(String name, String date, int duration, int complexity, int min_age, int max_people,
                 double price, String instructorId){
-        this.hikeId = id;
+        this.hikeId = UUID.randomUUID().toString();
         this.name = name;
         this.date = date;
         this.duration = duration;
