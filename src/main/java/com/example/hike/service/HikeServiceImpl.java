@@ -1,12 +1,10 @@
 package com.example.hike.service;
 
 import com.example.hike.model.Hike;
-import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class HikeServiceImpl implements HikeService {
@@ -19,8 +17,8 @@ public class HikeServiceImpl implements HikeService {
     }
 
     @Override
-    public Hike addHike(Hike newHike) {
-        return hikeRepository.save(newHike);
+    public Hike addHike(Hike hike) {
+        return hikeRepository.save(hike);
     }
 
     @Override

@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface HikeService {
 
-    Hike addHike(Hike newHike);
+    Hike addHike(Hike hike);
 
     List<Hike> getAll();
 
